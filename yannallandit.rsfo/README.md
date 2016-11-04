@@ -47,9 +47,9 @@ Including an example of how to use your role (for instance, with variables passe
 
    `---`  
    `- name: test module for RSFO`  
-   `  hosts: "{{ MAIN_NODE }}"`  
-   `  roles:`  
-   `    - role: yannallandit.rsfo`  
+     `  hosts: "{{ MAIN_NODE }}"`  
+     `  roles:`  
+     `    - role: yannallandit.rsfo`  
 
 License
 -------
