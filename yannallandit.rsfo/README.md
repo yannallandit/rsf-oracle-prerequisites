@@ -22,13 +22,13 @@ Restriction:
 Requirements
 ------------
 
-A devops:users need to exist on the main target node. This one need to be able to sudo without password.
+A devops:users need to exist on the main target node. This one need to be able to sudo without password.  
 The root user main target node needs also to be able to ssh the other cluster nodes without password of passphrase.
 
 Role Variables
 --------------
 
-Before running this role you need to update the variables in vars/main.yml.
+Before running this role you need to update the variables in vars/main.yml.  
 The variables are:
 - MAIN_NODE is the node from where Ansible will drive the deployment of RSFO.
 - TARGET_NODES need to be defined in a case of multi-node deployment (preparation for RAC implementation for instance).
@@ -43,11 +43,11 @@ This role only works with RHEL 7 as target operating system.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:  
 
    `---`  
    `- name: test module for RSFO`  
-     `  hosts: "{{ MAIN_NODE }}"`  
+   "  "`  hosts: "{{ MAIN_NODE }}"`  
      `  roles:`  
      `    - role: yannallandit.rsfo`  
 
