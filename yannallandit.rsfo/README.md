@@ -1,5 +1,5 @@
-Role Name
-=========
+yannallandit.rsfo
+=================
 
 RSFO for Ansible is the Ansible role implementation of the Rapid Setting For oracle rpm.
 RSFO goal is to provide a set of scripts to enable a REDHAT 7 environment for Oracle 12c Single Instance or RAC.
@@ -46,11 +46,11 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
----
-- name: test module for RSFO
-  hosts: "{{ MAIN_NODE }}"
-  roles:
-    - role: yannallandit.rsfo
+`<--->`
+`<- name: test module for RSFO>`
+`<  hosts: "{{ MAIN_NODE }}">`
+`<  roles:>`
+`<    - role: yannallandit.rsfo>`
 
 License
 -------

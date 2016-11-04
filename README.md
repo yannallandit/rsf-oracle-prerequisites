@@ -23,5 +23,5 @@ RSFO is a package, distributed as an Ansible role, that automates all the pre-re
 4. Implement the role in your playbook as in the example provided: testrsfo.yml
 5. More details are provided in the file ./yannallandit.rsfo/README.md
 
-More information about RSFO itself the RSFO_introduction.pdf document located in https://github.com/yannallandit/rsfo
+More information, look at the RSFO_Ansible_Introduction_V1a.pdf and at https://github.com/yannallandit/rsfo
 
