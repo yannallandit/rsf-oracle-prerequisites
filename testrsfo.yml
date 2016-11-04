@@ -1,9 +1,5 @@
 ---
-#- hosts: rsfotest1
 - name: test module for RSFO
-#  hosts: rsfotest1
   hosts: "{{ MAIN_NODE }}"
-#  become: yes
-#  become_user: root
   roles:
     - role: yannallandit.rsfo

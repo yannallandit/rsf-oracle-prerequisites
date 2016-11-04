@@ -1,38 +1,63 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+RSFO for Ansible is the Ansible role implementation of the Rapid Setting For oracle rpm.
+RSFO goal is to provide a set of scripts to enable a REDHAT 7 environment for Oracle 12c Single Instance or RAC.
+RSFO will set the Oracle pre-requesites except:
+- The storage configuration
+- The root ssh without password needed for deployement
+- The network setting
+
+Restriction:
+------------
+
+- Maximum nodes in the cluster: 12.
+- These scripts has been designed for RedHat 7.
+- Only the RH7 Update 1 is tested with the current build. However, nothing should prevent to use it with any RH7.x release.
+- The ssh as to be set before you run the scripts.
+- A YUM repository need to be reachable for the installation of the packages required by Oracle
+
+
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+A devops:users need to exist on the main target node. This one need to be able to sudo without password.
+The root user main target node needs also to be able to ssh the other cluster nodes without password of passphrase.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Before running this role you need to update the variables in vars/main.yml.
+The variables are:
+- MAIN_NODE is the node from where Ansible will drive the deployment of RSFO.
+- TARGET_NODES need to be defined in a case of multi-node deployment (preparation for RAC implementation for instance).
+- GRID_BASE is the loation of the BASE directory for the GRID components.
+- ORA_BASE is the loation of the BASE directory for the Oracle database componen
+ts.
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+This rle only works with RHEL 7 as target operating system.
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+---
+- name: test module for RSFO
+  hosts: "{{ MAIN_NODE }}"
+  roles:
+    - role: yannallandit.rsfo
 
 License
 -------
 
-BSD
+Apache V2
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+yann.allandit@hpe.com

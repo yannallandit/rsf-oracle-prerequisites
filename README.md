@@ -8,16 +8,20 @@ Rapid Setting For Oracle (RAC)
 
 RSFO is a package, distributed as an Ansible role, that automates all the pre-requisite tasks for an Oracle installation on Red Hat 7.
 
+### How to prepare your environment for using RSFO
+
+1. Create a devops:users in the main target installation node.
+2. sudo root for devops without password.
+3. (optional) configure the cluster interconnect or the network in case of multiple single instance installation.
+4. configure the ssh for root without password nor passphrase between the master target node and the cluster nodes (in case of multinode like RAC installation).
+
 ### How to use RSFO for Ansible in a single node deployment context
 
-1. Download the latest rpm from the Github page https://github.com/yannallandit/rsfo
-2. Install the rpm: yum install –y rsfo-1.0.8-1.el7.noarch.rpm
-3. Go to the location directory: # cd /opt/hpe/rsfo/
-4. Run the first script: # ./rsfo_run1_os7up.sh
-        * Provides the list of nodes where Oracle will be installed
-5. Run the second scripts: # ./rsfo_run2_cruser.sh
-        * Confirm the targeted nodes
-        * Provide the location of the Grid and the Oracle BASE location
+1. Download the latest Ansible role (rsfo_ansible.tar.gz) from the Github page https://github.com/yannallandit/rsfoansible
+2. Install the role: tar xzvf rsfo_ansible.tar.gz
+3. Update the variable file located in ./yannallandit.rsfo/vars/main.yml
+4. Implement the role in your playbook as in the example provided: testrsfo.yml
+5. More details are provided in the file ./yannallandit.rsfo/README.md
 
-More information in the RSFO_introduction.pdf document.
+More information about RSFO itself the RSFO_introduction.pdf document located in https://github.com/yannallandit/rsfo
 
