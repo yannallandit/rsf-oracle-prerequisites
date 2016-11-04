@@ -33,24 +33,23 @@ The variables are:
 - MAIN_NODE is the node from where Ansible will drive the deployment of RSFO.
 - TARGET_NODES need to be defined in a case of multi-node deployment (preparation for RAC implementation for instance).
 - GRID_BASE is the loation of the BASE directory for the GRID components.
-- ORA_BASE is the loation of the BASE directory for the Oracle database componen
-ts.
+- ORA_BASE is the loation of the BASE directory for the Oracle database components.
 
 Dependencies
 ------------
 
-This rle only works with RHEL 7 as target operating system.
+This role only works with RHEL 7 as target operating system.
 
 Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-* `---`
-* `- name: test module for RSFO`
-* `  hosts: "{{ MAIN_NODE }}"`
-* `  roles:`
-* `    - role: yannallandit.rsfo`
+   `---`  
+   `- name: test module for RSFO`  
+   `  hosts: "{{ MAIN_NODE }}"`  
+   `  roles:`  
+   `    - role: yannallandit.rsfo`  
 
 License
 -------
