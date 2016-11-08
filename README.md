@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Rapid Setting For Oracle Prerequisites
 ======================================
 
@@ -63,4 +62,3 @@ Author Information
 yann.allandit@hpe.com
 =======
 # rsf-oracle-prerequisites
->>>>>>> 6d1aaa30efc965b9bb25655d533e10a21ad16a7f
