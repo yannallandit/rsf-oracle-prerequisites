@@ -1,5 +1,5 @@
-yannallandit.rsfo
-=================
+Rapid Setting For Oracle Prerequisites
+======================================
 
 RSFO for Ansible is the Ansible role implementation of the Rapid Setting For oracle rpm.  
 RSFO goal is to provide a set of scripts to enable a REDHAT 7 environment for Oracle 12c Single Instance or RAC.  
