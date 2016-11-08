@@ -31,9 +31,16 @@ galaxy_info:
   # the ones that apply to your role. If you don't see your
   # platform on this list, let us know and we'll get it added!
   #
-  #platforms:
+  platforms:
+    - Enterprise_Linux
 
-  galaxy_tags: []
+  galaxy_tags: 
+    - oracle
+    - system
+    - database
+    - installer
+    - preinstallation
+
     # List tags for your role here, one per line. A tag is
     # a keyword that describes and categorizes the role.
     # Users find roles by searching for tags. Be sure to
