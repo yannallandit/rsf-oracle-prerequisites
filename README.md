@@ -1,27 +1,62 @@
-# rsfo for Ansible version
-==========================
+yannallandit.rsfo
+=================
 
-Rapid Setting For Oracle (RAC)
-------------------------------
+RSFO for Ansible is the Ansible role implementation of the Rapid Setting For oracle rpm.  
+RSFO goal is to provide a set of scripts to enable a REDHAT 7 environment for Oracle 12c Single Instance or RAC.  
+RSFO will set the Oracle pre-requesites except:
+- The storage configuration
+- The root ssh without password needed for deployement
+- The network setting
 
-### What is RSFO for Ansible?
+Restriction:
+------------
 
-RSFO is a package, distributed as an Ansible role, that automates all the pre-requisite tasks for an Oracle installation on Red Hat 7.
+- Maximum nodes in the cluster: 12.
+- These scripts has been designed for RedHat 7.
+- Only the RH7 Update 1 is tested with the current build. However, nothing should prevent to use it with any RH7.x release.
+- The ssh as to be set before you run the scripts.
+- A YUM repository need to be reachable for the installation of the packages required by Oracle
 
-### How to prepare your environment for using RSFO
 
-1. Create a devops:users in the main target installation node.
-2. sudo root for devops without password.
-3. (optional) configure the cluster interconnect or the network in case of multiple single instance installation.
-4. configure the ssh for root without password nor passphrase between the master target node and the cluster nodes (in case of multinode like RAC installation).
 
-### How to use RSFO for Ansible in a single node deployment context
+Requirements
+------------
 
-1. Download the latest Ansible role (rsfo_ansible.tar.gz) from the Github page https://github.com/yannallandit/rsfoansible
-2. Install the role: tar xzvf rsfo_ansible.tar.gz
-3. Update the variable file located in ./yannallandit.rsfo/vars/main.yml
-4. Implement the role in your playbook as in the example provided: testrsfo.yml
-5. More details are provided in the file ./yannallandit.rsfo/README.md
+A devops:users need to exist on the main target node. This one need to be able to sudo without password.  
+The root user main target node needs also to be able to ssh the other cluster nodes without password of passphrase.
 
-More information, look at the RSFO_Ansible_Introduction_V1a.pdf and at https://github.com/yannallandit/rsfo
+Role Variables
+--------------
 
+Before running this role you need to update the variables in vars/main.yml.  
+The variables are:
+- MAIN_NODE is the node from where Ansible will drive the deployment of RSFO.
+- TARGET_NODES need to be defined in a case of multi-node deployment (preparation for RAC implementation for instance).
+- GRID_BASE is the loation of the BASE directory for the GRID components.
+- ORA_BASE is the loation of the BASE directory for the Oracle database components.
+
+Dependencies
+------------
+
+This role only works with RHEL 7 as target operating system.
+
+Example Playbook
+----------------
+
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:  
+
+   `---`  
+   `- name: test module for RSFO`  
+     `  hosts: "{{ MAIN_NODE }}"`  
+     `  roles:`  
+     `    - role: yannallandit.rsfo`  
+
+License
+-------
+
+Apache V2
+
+Author Information
+------------------
+
+yann.allandit@hpe.com
