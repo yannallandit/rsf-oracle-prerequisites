@@ -32,7 +32,9 @@ galaxy_info:
   # platform on this list, let us know and we'll get it added!
   #
   platforms:
-    - EL
+    - name: EL
+      versions:
+        - 7
 
   galaxy_tags: 
     - oracle
