@@ -1,3 +1,5 @@
+![alt tag](https://github.com/yannallandit/rsf-oracle-prerequisites/blob/master/RSFO_Ansible_Madium.jpg)
+--------------------------------------
 Rapid Setting For Oracle Prerequisites
 ======================================
 
